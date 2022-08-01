@@ -3,7 +3,17 @@ info:
   description: This is a sample Server pets
   title: Swagger Example API
   version: 0.0.1
-paths: {}
+paths:
+  /article/getList:
+    get:
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 获取用户动态路由
+      tags:
+      - AuthorityMenu
 securityDefinitions:
   ApiKeyAuth:
     in: header
