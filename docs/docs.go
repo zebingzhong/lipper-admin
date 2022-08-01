@@ -15,17 +15,24 @@ const docTemplate = `{
     },
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
-    "paths": {}
+    "paths": {},
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "x-token",
+            "in": "header"
+        }
+    }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "1.0",
-	Host:             "localhost:8080",
-	BasePath:         "/api/v1",
+	Version:          "0.0.1",
+	Host:             "",
+	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "lipper-admin",
-	Description:      "Go语言后台",
+	Title:            "Swagger Example API",
+	Description:      "This is a sample Server pets",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }

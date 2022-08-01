@@ -7,11 +7,12 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/natefinch/lumberjack"
+	_ "github.com/zebingzhong/lipper-admin/docs"
 	"github.com/zebingzhong/lipper-admin/global"
 	"github.com/zebingzhong/lipper-admin/internal/models"
-	"github.com/zebingzhong/lipper-admin/internal/routers"
 	"github.com/zebingzhong/lipper-admin/pkg/logger"
 	"github.com/zebingzhong/lipper-admin/pkg/setting"
+	"github.com/zebingzhong/lipper-admin/routers"
 )
 
 func init() {
@@ -29,12 +30,13 @@ func init() {
 	}
 }
 
-// @title       lipper-admin
-// @version     1.0
-// @description Go语言后台
-// @host      localhost:8080
-// @BasePath  /api/v1
-
+// @title Swagger Example API
+// @version 0.0.1
+// @description This is a sample Server pets
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name x-token
+// @BasePath /api
 func main() {
 	gin.SetMode(global.ServerSetting.RunMode)
 	router := routers.NewRouter()

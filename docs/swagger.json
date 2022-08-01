@@ -1,12 +1,17 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Go语言后台",
-        "title": "lipper-admin",
+        "description": "This is a sample Server pets",
+        "title": "Swagger Example API",
         "contact": {},
-        "version": "1.0"
+        "version": "0.0.1"
     },
-    "host": "localhost:8080",
-    "basePath": "/api/v1",
-    "paths": {}
+    "paths": {},
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "x-token",
+            "in": "header"
+        }
+    }
 }
