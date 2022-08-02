@@ -1,7 +1,9 @@
-package models
+package blog
+
+import "github.com/zebingzhong/lipper-admin/internal/models"
 
 type Article struct {
-	*Model
+	*models.Model
 	Title         string `json:"title"`
 	Desc          string `json:"desc"`
 	Content       string `json:"content"`

@@ -15,25 +15,7 @@ const docTemplate = `{
     },
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
-    "paths": {
-        "/article/getList": {
-            "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "AuthorityMenu"
-                ],
-                "summary": "获取用户动态路由",
-                "responses": {}
-            }
-        }
-    },
+    "paths": {},
     "securityDefinitions": {
         "ApiKeyAuth": {
             "type": "apiKey",

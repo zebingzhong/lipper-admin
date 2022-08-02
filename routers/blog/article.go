@@ -11,7 +11,7 @@ func (b *ArticelRouter) InitArticleRouter(Router *gin.RouterGroup) (R gin.IRoute
 	articelRouter := Router.Group("article")
 	articleApi := v1.ApiGroupApp.BlogApiGroup.Article
 	{
-		articelRouter.GET("getList", articleApi.List)
+		articelRouter.POST("getList", articleApi.List)
 	}
 	return articelRouter
 }

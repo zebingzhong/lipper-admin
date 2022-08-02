@@ -9,6 +9,15 @@ type ServerSettingS struct {
 	WriteTimeout time.Duration
 }
 
+type SystemSettingS struct {
+	OSSType string
+}
+
+type LocalSettingS struct {
+	Path      string
+	StorePath string
+}
+
 type AppSettingS struct {
 	DefaultPageSize int
 	MaxPageSize     int
@@ -29,6 +38,16 @@ type DatabaseSettingS struct {
 	MaxIdleConns int
 	MaxOpenConns int
 	MaxLifetimes int
+}
+
+type QiNiu struct {
+	Zone          string
+	Bucket        string
+	ImgPath       string
+	UseHttps      bool
+	AccessKey     string
+	SecretKey     string
+	UseCdnDomains bool
 }
 
 func (s *Setting) ReadSection(k string, v interface{}) error {
