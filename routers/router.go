@@ -11,12 +11,14 @@ func NewRouter() *gin.Engine {
 	Router := gin.Default()
 
 	blogRouter := RouterGroupApp.Blog
+	systemRouter := RouterGroupApp.System
 
 	Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	PublicGroup := Router.Group("/api")
 	{
 		blogRouter.InitArticleRouter(PublicGroup)
+		systemRouter.InitFileUploadRouter(PublicGroup)
 	}
 
 	return Router

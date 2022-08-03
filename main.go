@@ -67,6 +67,18 @@ func setupSetting() error {
 	if err != nil {
 		return err
 	}
+	err = setting.ReadSection("System", &global.SystemSetting)
+	if err != nil {
+		return err
+	}
+	err = setting.ReadSection("Local", &global.LocalSetting)
+	if err != nil {
+		return err
+	}
+	err = setting.ReadSection("QiNiu", &global.QiNiuSetting)
+	if err != nil {
+		return err
+	}
 
 	global.ServerSetting.ReadTimeout *= time.Second
 	global.ServerSetting.WriteTimeout *= time.Second

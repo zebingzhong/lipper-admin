@@ -34,6 +34,7 @@ func (*Local) UploadFile(file *multipart.FileHeader) (string, string, error) {
 	if mkdirErr != nil {
 		return "", "", errors.New("function os.MkdirAll() Filed, err:" + mkdirErr.Error())
 	}
+
 	// 拼接路径和文件名
 	p := global.LocalSetting.StorePath + "/" + fileName
 	filePath := global.LocalSetting.Path + "/" + fileName

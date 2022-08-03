@@ -1,6 +1,7 @@
 package system
 
 import (
+	"fmt"
 	"mime/multipart"
 	"strings"
 
@@ -13,6 +14,7 @@ type UploadFileService struct{}
 func (e *UploadFileService) UploadFile(header *multipart.FileHeader, noSave string) (file system.FileUpload, err error) {
 	oss := upload.NewOss()
 	filePath, key, uploadErr := oss.UploadFile(header)
+	fmt.Println(uploadErr)
 	if uploadErr != nil {
 		panic(err)
 	}

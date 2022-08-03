@@ -2,7 +2,7 @@ package blog
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zebingzhong/lipper-admin/internal/models/request"
+	"github.com/zebingzhong/lipper-admin/internal/models/blog/request"
 )
 
 type Article struct{}

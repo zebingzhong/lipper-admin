@@ -5,19 +5,19 @@ Server:
   WriteTimeout: 60
 
 System:
-  oss-type: 'local'
+  OSSType: 'local'
 
 # local configuration
-local:
-  path: 'uploads/file' # 访问路径
-  store-path: 'uploads/file' # 存储路径
+Local:
+  Path: 'storage/uploads/file' # 访问路径
+  StorePath: 'storage/uploads/file' # 存储路径
 
 App:
   DefaultPageSize: 10
   MaxPageSize: 100
   LogSavePath: storage/logs
   LogFileName: app
-  LogFileExt: .log
+  LogFileExt: .log  
 
 Database:
   DBType: mysql
@@ -32,11 +32,11 @@ Database:
   MaxOpenConns: 30
   MaxLifetimes: 30
 
-qiniu:
-  zone: 'ZoneHuaDong'
-  bucket: ''
-  img-path: ''
-  use-https: false
-  access-key: ''
-  secret-key: ''
-  use-cdn-domains: false
+Qiniu:
+  Zone: 'ZoneHuaDong'
+  Bucket: ''
+  ImgPath: ''
+  UseHttps: false
+  AccessKey: ''
+  SecretKey: ''
+  UseCdnDomains: false

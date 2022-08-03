@@ -1,4 +1,4 @@
-package common
+package response
 
 import (
 	"net/http"
@@ -29,7 +29,6 @@ func Result(code int, data interface{}, msg string, c *gin.Context) {
 func Ok(c *gin.Context) {
 	Result(SUCCESS, map[string]interface{}{}, "操作成功", c)
 }
-
 func OkWithMessage(message string, c *gin.Context) {
 	Result(SUCCESS, map[string]interface{}{}, message, c)
 }
