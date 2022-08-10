@@ -10,9 +10,11 @@ import (
 	_ "github.com/zebingzhong/lipper-admin/docs"
 	"github.com/zebingzhong/lipper-admin/global"
 	"github.com/zebingzhong/lipper-admin/internal/models"
+	"github.com/zebingzhong/lipper-admin/internal/models/young/category"
 	"github.com/zebingzhong/lipper-admin/pkg/logger"
 	"github.com/zebingzhong/lipper-admin/pkg/setting"
 	"github.com/zebingzhong/lipper-admin/routers"
+	"gorm.io/gorm"
 )
 
 func init() {
@@ -91,7 +93,7 @@ func setupDBEngine() error {
 	if err != nil {
 		return err
 	}
-
+	RegisterTables(global.DBEngine)
 	return nil
 }
 
@@ -104,4 +106,13 @@ func setupLogger() error {
 	}, "", log.LstdFlags).WithCaller(2)
 
 	return nil
+}
+
+func RegisterTables(db *gorm.DB) {
+	err := db.AutoMigrate(
+		category.FoodCategory{},
+	)
+	if err != nil {
+		panic(err)
+	}
 }

@@ -34,7 +34,6 @@ func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 	if err != nil {
 		panic(err)
 	}
-
 	sqlDB, _ := db.DB()
 	// 设置空闲连接池中连接最大数量
 	sqlDB.SetMaxIdleConns(databaseSetting.MaxIdleConns)
